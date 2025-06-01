@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Electrical Engineer</title>
+  <style>
+    /* Light and dark theme colors */
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --section-bg: #fff;
+      --highlight-color: #007BFF;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --section-bg: #1e1e1e;
+      --highlight-color: #4dabf7;
+      --shadow-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    h1 {
+      color: var(--highlight-color);
+    }
+
+    section {
+      background: var(--section-bg);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: var(--highlight-color);
+    }
+
+    /* Toggle switch container */
+    .toggle-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    /* Toggle switch styling */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    /* Hide default checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* Slider background */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 26px;
+      transition: background-color 0.4s;
+    }
+
+    /* Circle inside slider */
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.4s;
+    }
+
+    /* When checked, change background */
+    input:checked + .slider {
+      background-color: var(--highlight-color);
+    }
+
+    /* Move circle to the right when checked */
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Electrical Engineer</h1>
+
+  <section>
+    <h2>Description</h2>
+    <p>Electrical Engineers design, develop, test, and supervise the manufacturing of electrical equipment such as electric motors, radar and navigation systems, communications systems, and power generation equipment. They also work on electrical systems for buildings and vehicles.</p>
+  </section>
+
+  <section>
+    <h2>Salary Range (India)</h2>
+    <ul>
+      <li><span class="highlight">Entry-Level:</span> ₹3 – ₹6 LPA</li>
+      <li><span class="highlight">Mid-Level:</span> ₹6 – ₹12 LPA</li>
+      <li><span class="highlight">Senior-Level:</span> ₹12 – ₹25+ LPA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Required</h2>
+    <ul>
+      <li>Strong understanding of electrical theory and circuit design</li>
+      <li>Proficiency in tools like MATLAB, AutoCAD, ETAP</li>
+      <li>Problem-solving and analytical skills</li>
+      <li>Project management and teamwork</li>
+      <li>Basic programming (C/C++, Python, embedded systems)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Aspects</h2>
+    <p>Electrical Engineering is evolving with advancements in renewable energy, electric vehicles, smart grids, and IoT-enabled devices. There is growing demand in automation, robotics, and sustainable energy sectors globally. With AI integration and Industry 4.0, skilled electrical engineers are poised for an impactful career.</p>
+  </section>
+
+  <section>
+    <h2>Top to Mid-Tier Companies That Recruit Electrical Engineers</h2>
+    <ul>
+      <li><span class="highlight">Top-Tier:</span> ISRO, DRDO, Siemens, ABB, General Electric (GE), Tesla</li>
+      <li><span class="highlight">Mid-Tier:</span> L&T, Schneider Electric, Tata Power, BHEL, Havells, Crompton Greaves</li>
+      <li><span class="highlight">Others:</span> Government Electricity Boards, Railways, Startups in Energy Tech</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Famous Electrical Engineers</h2>
+    <ul>
+      <li><span class="highlight">Nikola Tesla</span> – Pioneer of AC electricity and wireless technology</li>
+      <li><span class="highlight">Thomas Edison</span> – Inventor of the electric bulb and phonograph</li>
+      <li><span class="highlight">Elon Musk</span> – Though not formally an EE, he heavily influences the field via Tesla Inc.</li>
+      <li><span class="highlight">Guglielmo Marconi</span> – Developed radio transmission technology</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+
+    // Check localStorage for saved preference
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+
+</body>
+</html>

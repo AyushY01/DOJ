@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Law Field Jobs - Professional Vibes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap');
+
+    :root {
+      --bg-color: #0b1d3a;
+      --text-color: #f0d88f; /* Gold-ish */
+      --card-bg: #13294b;
+      --card-text: #d7c686;
+      --accent-color: #c9a94f;
+      --link-color: #e4c95a;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 40px;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background pattern: subtle courthouse pillars or scales silhouette */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.02) 2%, transparent 3%),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.015) 1%, transparent 2%);
+      background-size: 50px 50px;
+      z-index: 0;
+    }
+
+    /* Lady Justice watermark on right */
+    .lady-justice {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 180px;
+      height: 320px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Justitia_Statue_in_Brandenburg_Gate_Berlin_2012_02.JPG/240px-Justitia_Statue_in_Brandenburg_Gate_Berlin_2012_02.JPG');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.15;
+      filter: grayscale(100%) brightness(1.2);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    h1 {
+      font-family: 'Merriweather', serif;
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 8px var(--accent-color);
+    }
+
+    .job-category {
+      background: var(--card-bg);
+      border-left: 6px solid var(--accent-color);
+      border-radius: 8px;
+      padding: 22px 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 0 12px rgba(201, 169, 79, 0.4);
+      position: relative;
+      z-index: 1;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .job-category:hover {
+      box-shadow: 0 0 20px rgba(201, 169, 79, 0.7);
+    }
+
+    .job-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-color);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 6px var(--accent-color);
+    }
+
+    .job-description {
+      font-size: 1.1rem;
+      color: var(--card-text);
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .know-more {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--link-color);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: color 0.3s ease;
+    }
+
+    .know-more:hover {
+      color: #ffd54f;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Law Field Jobs</h1>
+
+  <div class="job-category">
+    <div class="job-title">Lawyer</div>
+    <div class="job-description">Represents clients in legal proceedings, providing advice and preparing legal documents.</div>
+    <a class="know-more" href="lawyer.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Paralegal</div>
+    <div class="job-description">Assists lawyers by conducting research, organizing files, and preparing documents.</div>
+    <a class="know-more" href="paralegal.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Judge</div>
+    <div class="job-description">Presides over court proceedings, interpreting laws and ensuring fair trials.</div>
+    <a class="know-more" href="judge.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Legal Advisor</div>
+    <div class="job-description">Provides expert advice to organizations on legal matters and risk management.</div>
+    <a class="know-more" href="legal-advisor.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Corporate Lawyer</div>
+    <div class="job-description">Specializes in corporate law, handling mergers, acquisitions, and compliance.</div>
+    <a class="know-more" href="corporate-lawyer.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Criminal Lawyer</div>
+    <div class="job-description">Defends or prosecutes individuals charged with criminal offenses.</div>
+    <a class="know-more" href="criminal-lawyer.html">Know more</a>
+  </div>
+
+  <div class="lady-justice"></div>
+
+</body>
+</html>

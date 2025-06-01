@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthcare & Medical Jobs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      margin: 0;
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .toggle-container {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    .job-category {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    .dark-mode .job-category {
+      background-color: #1e1e1e;
+      border-color: #333;
+    }
+    .job-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .job-description {
+      margin: 8px 0;
+    }
+    .know-more {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .know-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Healthcare & Medical Jobs</h1>
+
+  <div class="job-category">
+    <div class="job-title">Doctor (Physician)</div>
+    <div class="job-description">Diagnoses and treats illnesses and injuries. Provides healthcare guidance and prescriptions.</div>
+    <a class="know-more" href="doctor.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Surgeon</div>
+    <div class="job-description">Performs surgical operations to treat injuries, diseases, and deformities.</div>
+    <a class="know-more" href="surgeon.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Nurse</div>
+    <div class="job-description">Provides patient care, supports doctors, and ensures a safe recovery environment.</div>
+    <a class="know-more" href="nurse.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Pharmacist</div>
+    <div class="job-description">Prepares and dispenses medications, advises on drug usage, and ensures patient safety.</div>
+    <a class="know-more" href="pharmacist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Physiotherapist</div>
+    <div class="job-description">Helps patients regain movement and manage pain through physical therapy and rehabilitation.</div>
+    <a class="know-more" href="physiotherapist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Dentist</div>
+    <div class="job-description">Diagnoses and treats issues related to teeth, gums, and other parts of the mouth.</div>
+    <a class="know-more" href="dentist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Medical Laboratory Technologist</div>
+    <div class="job-description">Conducts tests on body fluids to help diagnose diseases and conditions.</div>
+    <a class="know-more" href="lab-technologist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Radiologist</div>
+    <div class="job-description">Uses imaging techniques like X-rays, CT scans, and MRIs to diagnose and treat diseases.</div>
+    <a class="know-more" href="radiologist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Paramedic</div>
+    <div class="job-description">Provides emergency medical care and transports patients to healthcare facilities.</div>
+    <a class="know-more" href="paramedic.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Psychiatrist</div>
+    <div class="job-description">Diagnoses and treats mental health disorders, often using medications and therapy.</div>
+    <a class="know-more" href="psychiatrist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Psychologist</div>
+    <div class="job-description">Studies mental processes and behavior, and helps patients through counseling and therapies.</div>
+    <a class="know-more" href="psychologist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Occupational Therapist</div>
+    <div class="job-description">Helps patients develop or recover daily living and work skills through therapeutic use of activities.</div>
+    <a class="know-more" href="occupational-therapist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Speech-Language Pathologist</div>
+    <div class="job-description">Diagnoses and treats communication and swallowing disorders.</div>
+    <a class="know-more" href="speech-pathologist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Optometrist</div>
+    <div class="job-description">Examines eyes, diagnoses vision problems, and prescribes corrective lenses.</div>
+    <a class="know-more" href="optometrist.html">Know more</a>
+  </div>
+
+  <div class="job-category">
+    <div class="job-title">Biomedical Scientist</div>
+    <div class="job-description">Analyzes samples and conducts research to support diagnosis and treatment of diseases.</div>
+    <a class="know-more" href="biomedical-scientist.html">Know more</a>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor (Physician)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fff;
+      color: #000;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #fff;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    section {
+      margin-bottom: 20px;
+    }
+    .toggle-container {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Doctor (Physician)</h1>
+
+  <section>
+    <strong>Description:</strong>
+    <p>Doctors are responsible for diagnosing illnesses, prescribing medications, and providing comprehensive treatment plans. They work across various specialties, such as general medicine, pediatrics, cardiology, and more.</p>
+  </section>
+
+  <section>
+    <strong>Salary Range:</strong>
+    <p>₹10,00,000 – ₹35,00,000 per year in India; can vary based on specialty and experience.</p>
+  </section>
+
+  <section>
+    <strong>Skills Required:</strong>
+    <ul>
+      <li>Excellent communication and interpersonal skills</li>
+      <li>Strong diagnostic and problem-solving ability</li>
+      <li>Empathy and patient-centered care</li>
+      <li>Deep knowledge of human biology and diseases</li>
+    </ul>
+  </section>
+
+  <section>
+    <strong>Future Aspects:</strong>
+    <p>Medical professionals continue to be in high demand due to aging populations and emerging health challenges. Opportunities in telemedicine, research, and healthcare administration are growing.</p>
+  </section>
+
+  <section>
+    <strong>Top Recruiters:</strong>
+    <ul>
+      <li>Apollo Hospitals</li>
+      <li>Fortis Healthcare</li>
+      <li>AIIMS</li>
+      <li>Medanta</li>
+      <li>Government Health Departments</li>
+      <li>Private clinics and startups (e.g., Practo, 1mg)</li>
+    </ul>
+  </section>
+
+  <section>
+    <strong>Famous Professionals:</strong>
+    <ul>
+      <li>Dr. Devi Shetty – Cardiac Surgeon, Founder of Narayana Health</li>
+      <li>Dr. Naresh Trehan – Renowned Cardiovascular Surgeon</li>
+      <li>Dr. A.P.J. Abdul Kalam – Worked with DRDO & ISRO in biomedical roles</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hardware Engineer</title>
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --section-bg: #fff;
+      --highlight-color: #007BFF;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --section-bg: #1e1e1e;
+      --highlight-color: #4dabf7;
+      --shadow-color: rgba(255, 255, 255, 0.1);
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    h1 {
+      color: var(--highlight-color);
+    }
+    section {
+      background: var(--section-bg);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: var(--highlight-color);
+    }
+    .toggle-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 26px;
+      transition: background-color 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px; width: 20px;
+      left: 3px; bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.4s;
+    }
+    input:checked + .slider {
+      background-color: var(--highlight-color);
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Hardware Engineer</h1>
+
+  <section>
+    <h2>Description</h2>
+    <p>Hardware Engineers design, develop, and test physical components of computers, embedded systems, and electronic devices.</p>
+  </section>
+
+  <section>
+    <h2>Salary Range (India)</h2>
+    <ul>
+      <li><span class="highlight">Entry-Level:</span> ₹3 – ₹6 LPA</li>
+      <li><span class="highlight">Mid-Level:</span> ₹6 – ₹12 LPA</li>
+      <li><span class="highlight">Senior-Level:</span> ₹12 – ₹25+ LPA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Required</h2>
+    <ul>
+      <li>Strong understanding of digital and analog circuits</li>
+      <li>Knowledge of microprocessors, FPGA, and PCB design</li>
+      <li>Experience with hardware description languages (HDL) like VHDL/Verilog</li>
+      <li>Familiarity with testing and debugging tools</li>
+      <li>Ability to collaborate with software and firmware teams</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Aspects</h2>
+    <p>With the growth of IoT, wearables, and embedded systems, demand for hardware engineers is increasing globally.</p>
+  </section>
+
+  <section>
+    <h2>Top to Mid-Tier Companies That Recruit Hardware Engineers</h2>
+    <ul>
+      <li><span class="highlight">Top-Tier:</span> Intel, Qualcomm, Texas Instruments, Broadcom</li>
+      <li><span class="highlight">Mid-Tier:</span> Cypress Semiconductor, Microchip Technology, Tata Elxsi</li>
+      <li><span class="highlight">Others:</span> Startups, defense sector companies</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Famous Hardware Engineers</h2>
+    <ul>
+      <li><span class="highlight">Robert Noyce</span> – Co-inventor of the integrated circuit</li>
+      <li><span class="highlight">Gordon Moore</span> – Co-founder of Intel and author of Moore's Law</li>
+      <li><span class="highlight">Steve Wozniak</span> – Co-founder of Apple and hardware innovator</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

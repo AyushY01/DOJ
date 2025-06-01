@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering & Hardware Jobs</title>
+  <style>
+    :root {
+      --bg-color: #f5f5f5;
+      --text-color: #333;
+      --card-bg: #fff;
+      --card-text: #555;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --card-bg: #1e1e1e;
+      --card-text: #ccc;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      margin: 0;
+      padding: 20px;
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+    h1 {
+      text-align: center;
+    }
+    .theme-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #007BFF;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    .job-category {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .job-title {
+      font-size: 20px;
+      margin: 10px 0 5px 0;
+    }
+    .job-description {
+      font-size: 14px;
+      color: var(--card-text);
+    }
+    .know-more {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 14px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .know-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Engineering & Hardware Jobs</h1>
+
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" onclick="toggleTheme()">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+  <!-- Jobs -->
+  <div class="job-category"><div class="job-title">Electrical Engineer</div><div class="job-description">Designs, develops, and maintains electrical systems and components to required specifications.</div><a class="know-more" href="electrical-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Mechanical Engineer</div><div class="job-description">Applies engineering principles to design, develop, and maintain mechanical systems.</div><a class="know-more" href="mechanical-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Civil Engineer</div><div class="job-description">Plans, designs, and oversees construction and maintenance of building structures and infrastructure.</div><a class="know-more" href="civil-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Aerospace Engineer</div><div class="job-description">Designs and tests aircraft, spacecraft, and missiles, focusing on aerodynamics, propulsion, and systems integration.</div><a class="know-more" href="aerospace-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Structural Engineer</div><div class="job-description">Analyzes and designs structural components to ensure buildings and infrastructures are safe and stable.</div><a class="know-more" href="structural-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Robotics Engineer</div><div class="job-description">Develops and maintains robotic systems, including design, construction, and automation programming.</div><a class="know-more" href="robotics-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Mechatronics Engineer</div><div class="job-description">Integrates mechanical, electrical, and software systems to create smart machines and automation systems.</div><a class="know-more" href="mechatronics-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Hardware Engineer</div><div class="job-description">Designs and tests computer hardware components such as processors, circuit boards, and memory devices.</div><a class="know-more" href="hardware-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Systems Engineer</div><div class="job-description">Oversees complex system architecture, integration, and operations across hardware and software domains.</div><a class="know-more" href="systems-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Automotive Engineer</div><div class="job-description">Designs and tests vehicles and their subsystems including engines, electronics, and safety features.</div><a class="know-more" href="automotive-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Manufacturing Engineer</div><div class="job-description">Develops and improves manufacturing processes for efficiency, cost-effectiveness, and quality.</div><a class="know-more" href="manufacturing-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Industrial Engineer</div><div class="job-description">Optimizes complex systems and processes to improve productivity, safety, and quality in production.</div><a class="know-more" href="industrial-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Biomedical Engineer</div><div class="job-description">Designs equipment, devices, and software used in healthcare, integrating engineering with medical sciences.</div><a class="know-more" href="biomedical-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Chemical Engineer</div><div class="job-description">Applies chemical principles to design processes for manufacturing chemicals, fuels, drugs, and food.</div><a class="know-more" href="chemical-engineer.html">Know more</a></div>
+  <div class="job-category"><div class="job-title">Nuclear Engineer</div><div class="job-description">Researches and develops processes, instruments, and systems used to derive benefits from nuclear energy and radiation.</div><a class="know-more" href="nuclear-engineer.html">Know more</a></div>
+
+</body>
+</html>

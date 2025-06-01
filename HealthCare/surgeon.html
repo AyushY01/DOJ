@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Surgeon - Healthcare Jobs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      margin: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .toggle-container {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px; width: 26px;
+      left: 4px; bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    section {
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #007BFF;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Surgeon</h1>
+
+  <section>
+    <h2>Description</h2>
+    <p>Surgeons perform operations to treat injuries, diseases, deformities, and improve body function. They specialize in various surgical fields such as general, orthopedic, cardiovascular, and neurosurgery.</p>
+  </section>
+
+  <section>
+    <h2>Salary Range</h2>
+    <p>₹10,00,000 to ₹50,00,000 per annum depending on specialization and experience.</p>
+  </section>
+
+  <section>
+    <h2>Skills Required</h2>
+    <ul>
+      <li>Manual dexterity and precision</li>
+      <li>Strong knowledge of human anatomy</li>
+      <li>Decision-making under pressure</li>
+      <li>Team coordination and communication</li>
+      <li>Patience and stamina</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Aspects</h2>
+    <p>High demand for specialized surgeons with increasing healthcare complexity and advanced medical technologies. Opportunities in hospitals, research, and private practice.</p>
+  </section>
+
+  <section>
+    <h2>Top Recruiters</h2>
+    <ul>
+      <li>AIIMS</li>
+      <li>Fortis Healthcare</li>
+      <li>Max Healthcare</li>
+      <li>Medanta</li>
+      <li>Apollo Hospitals</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Famous Professionals</h2>
+    <ul>
+      <li>Dr. Naresh Trehan</li>
+      <li>Dr. Devi Shetty</li>
+      <li>Dr. B.K. Misra</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

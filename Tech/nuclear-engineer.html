@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuclear Engineer</title>
+  <style>
+    :root {
+      --bg-color: #f0f8ff;
+      --text-color: #1b2a47;
+      --section-bg: #ffffff;
+      --highlight-color: #1565c0;
+      --shadow-color: rgba(21, 101, 192, 0.15);
+    }
+    body.dark-mode {
+      --bg-color: #0d1a2b;
+      --text-color: #a3c2f3;
+      --section-bg: #182c4a;
+      --highlight-color: #90caf9;
+      --shadow-color: rgba(144, 202, 249, 0.3);
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      line-height: 1.7;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    h1 {
+      color: var(--highlight-color);
+      margin-bottom: 15px;
+    }
+    section {
+      background-color: var(--section-bg);
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px var(--shadow-color);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    ul {
+      padding-left: 22px;
+    }
+    .highlight {
+      font-weight: 700;
+      color: var(--highlight-color);
+    }
+    .toggle-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 52px;
+      height: 28px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #90a4ae;
+      border-radius: 28px;
+      transition: background-color 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px; width: 22px;
+      left: 3px; bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.4s;
+    }
+    input:checked + .slider {
+      background-color: var(--highlight-color);
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Nuclear Engineer</h1>
+
+  <section>
+    <h2>Description</h2>
+    <p>Nuclear Engineers research and develop processes, instruments, and systems to harness nuclear energy and radiation safely and efficiently. They work on nuclear power plants, medical imaging, and radiation safety.</p>
+  </section>
+
+  <section>
+    <h2>Salary Range (India)</h2>
+    <ul>
+      <li><span class="highlight">Entry-Level:</span> ₹5 – ₹9 LPA</li>
+      <li><span class="highlight">Mid-Level:</span> ₹9 – ₹18 LPA</li>
+      <li><span class="highlight">Senior-Level:</span> ₹18 – ₹35+ LPA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Required</h2>
+    <ul>
+      <li>Reactor physics and nuclear fuel cycle</li>
+      <li>Radiation protection and safety protocols</li>
+      <li>Thermal hydraulics and reactor design</li>
+      <li>Regulatory compliance and quality assurance</li>
+      <li>Strong analytical and computational skills</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Aspects</h2>
+    <p>Growing interest in clean energy, nuclear medicine, and advanced reactors drives demand for nuclear engineers, especially in sustainable energy initiatives.</p>
+  </section>
+
+  <section>
+    <h2>Top to Mid-Tier Companies That Recruit Nuclear Engineers</h2>
+    <ul>
+      <li><span class="highlight">Top-Tier:</span> Bhabha Atomic Research Centre (BARC), Nuclear Power Corporation of India Limited (NPCIL), Westinghouse Electric</li>
+      <li><span class="highlight">Mid-Tier:</span> Larsen & Toubro (L&T), Areva, Indian Space Research Organisation (ISRO)</li>
+      <li><span class="highlight">Others:</span> Defense R&D organizations, nuclear medicine companies</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Famous Nuclear Engineers</h2>
+    <ul>
+      <li><span class="highlight">Enrico Fermi</span> – Architect of the first nuclear reactor</li>
+      <li><span class="highlight">Lise Meitner</span> – Contributor to nuclear fission discovery</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

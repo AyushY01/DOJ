@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chemical Engineer</title>
+  <style>
+    :root {
+      --bg-color: #fff7f0;
+      --text-color: #4b2c20;
+      --section-bg: #fff;
+      --highlight-color: #d84315;
+      --shadow-color: rgba(216, 67, 21, 0.15);
+    }
+    body.dark-mode {
+      --bg-color: #2b1a13;
+      --text-color: #f4c5b3;
+      --section-bg: #3c2922;
+      --highlight-color: #ff7043;
+      --shadow-color: rgba(255, 112, 67, 0.3);
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      line-height: 1.7;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    h1 {
+      color: var(--highlight-color);
+      margin-bottom: 15px;
+    }
+    section {
+      background-color: var(--section-bg);
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px var(--shadow-color);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    ul {
+      padding-left: 22px;
+    }
+    .highlight {
+      font-weight: 700;
+      color: var(--highlight-color);
+    }
+    .toggle-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 52px;
+      height: 28px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #d7ccc8;
+      border-radius: 28px;
+      transition: background-color 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 22px; width: 22px;
+      left: 3px; bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.4s;
+    }
+    input:checked + .slider {
+      background-color: var(--highlight-color);
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Chemical Engineer</h1>
+
+  <section>
+    <h2>Description</h2>
+    <p>Chemical Engineers design and operate processes that convert raw materials into valuable products, such as fuels, chemicals, pharmaceuticals, and food. They ensure safety, efficiency, and sustainability in chemical manufacturing.</p>
+  </section>
+
+  <section>
+    <h2>Salary Range (India)</h2>
+    <ul>
+      <li><span class="highlight">Entry-Level:</span> ₹3 – ₹7 LPA</li>
+      <li><span class="highlight">Mid-Level:</span> ₹7 – ₹14 LPA</li>
+      <li><span class="highlight">Senior-Level:</span> ₹14 – ₹30+ LPA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Required</h2>
+    <ul>
+      <li>Process design and simulation (Aspen Plus, HYSYS)</li>
+      <li>Chemical reaction engineering</li>
+      <li>Heat and mass transfer</li>
+      <li>Safety and environmental regulations</li>
+      <li>Problem-solving and analytical skills</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Aspects</h2>
+    <p>Growing demand for sustainable energy, green chemistry, and pharmaceutical manufacturing drives career growth for chemical engineers worldwide.</p>
+  </section>
+
+  <section>
+    <h2>Top to Mid-Tier Companies That Recruit Chemical Engineers</h2>
+    <ul>
+      <li><span class="highlight">Top-Tier:</span> Reliance Industries, BASF, Linde India, Tata Chemicals</li>
+      <li><span class="highlight">Mid-Tier:</span> Indian Oil Corporation, Honeywell, Aker Solutions</li>
+      <li><span class="highlight">Others:</span> Pharma companies, specialty chemicals firms</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Famous Chemical Engineers</h2>
+    <ul>
+      <li><span class="highlight">George E. Davis</span> – Founder of chemical engineering as a discipline</li>
+      <li><span class="highlight">Robert Langer</span> – Pioneer in drug delivery and biotechnology</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

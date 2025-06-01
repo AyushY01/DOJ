@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Robotics Engineer</title>
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --section-bg: #fff;
+      --highlight-color: #007BFF;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --section-bg: #1e1e1e;
+      --highlight-color: #4dabf7;
+      --shadow-color: rgba(255, 255, 255, 0.1);
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    h1 {
+      color: var(--highlight-color);
+    }
+    section {
+      background: var(--section-bg);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: var(--highlight-color);
+    }
+    .toggle-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 26px;
+      transition: background-color 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px; width: 20px;
+      left: 3px; bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.4s;
+    }
+    input:checked + .slider {
+      background-color: var(--highlight-color);
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Robotics Engineer</h1>
+
+  <section>
+    <h2>Description</h2>
+    <p>Robotics Engineers design, build, program, and test robots and automated systems to perform tasks in manufacturing, healthcare, and other industries.</p>
+  </section>
+
+  <section>
+    <h2>Salary Range (India)</h2>
+    <ul>
+      <li><span class="highlight">Entry-Level:</span> ₹4 – ₹8 LPA</li>
+      <li><span class="highlight">Mid-Level:</span> ₹8 – ₹15 LPA</li>
+      <li><span class="highlight">Senior-Level:</span> ₹15 – ₹30+ LPA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Required</h2>
+    <ul>
+      <li>Knowledge of robotics programming languages (C++, Python, ROS)</li>
+      <li>Understanding of mechanical design and electronics</li>
+      <li>Experience with sensors, actuators, and control systems</li>
+      <li>Problem-solving and analytical thinking</li>
+      <li>Team collaboration and project management</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Aspects</h2>
+    <p>Robotics is rapidly expanding in sectors like manufacturing, healthcare, logistics, and agriculture, with AI integration increasing the complexity and capability of robots.</p>
+  </section>
+
+  <section>
+    <h2>Top to Mid-Tier Companies That Recruit Robotics Engineers</h2>
+    <ul>
+      <li><span class="highlight">Top-Tier:</span> ABB, Boston Dynamics, Fanuc, KUKA Robotics</li>
+      <li><span class="highlight">Mid-Tier:</span> GreyOrange, Hi-Tech Robotics, Tata Elxsi</li>
+      <li><span class="highlight">Others:</span> Startups, research institutes, automotive manufacturers</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Famous Robotics Engineers</h2>
+    <ul>
+      <li><span class="highlight">Rodney Brooks</span> – Pioneer in robotics and co-founder of iRobot</li>
+      <li><span class="highlight">Marc Raibert</span> – Founder of Boston Dynamics</li>
+      <li><span class="highlight">Hiroshi Ishiguro</span> – Known for humanoid robots</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

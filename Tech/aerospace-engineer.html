@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aerospace Engineer</title>
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --section-bg: #fff;
+      --highlight-color: #007BFF;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --section-bg: #1e1e1e;
+      --highlight-color: #4dabf7;
+      --shadow-color: rgba(255, 255, 255, 0.1);
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    h1 {
+      color: var(--highlight-color);
+    }
+    section {
+      background: var(--section-bg);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px var(--shadow-color);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: var(--highlight-color);
+    }
+    .toggle-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 26px;
+      transition: background-color 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px; width: 20px;
+      left: 3px; bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.4s;
+    }
+    input:checked + .slider {
+      background-color: var(--highlight-color);
+    }
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle light and dark mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Aerospace Engineer</h1>
+
+  <section>
+    <h2>Description</h2>
+    <p>Aerospace Engineers design, develop, test, and supervise the manufacturing of aircraft, spacecraft, satellites, and missiles. They work on aerodynamics, propulsion systems, avionics, and materials to improve flight technology.</p>
+  </section>
+
+  <section>
+    <h2>Salary Range (India)</h2>
+    <ul>
+      <li><span class="highlight">Entry-Level:</span> ₹4 – ₹8 LPA</li>
+      <li><span class="highlight">Mid-Level:</span> ₹8 – ₹15 LPA</li>
+      <li><span class="highlight">Senior-Level:</span> ₹15 – ₹30+ LPA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Required</h2>
+    <ul>
+      <li>Strong knowledge of aerodynamics, thermodynamics, and propulsion</li>
+      <li>Proficiency in CAD tools and simulation software (ANSYS, CATIA)</li>
+      <li>Problem-solving and analytical skills</li>
+      <li>Understanding of control systems and materials science</li>
+      <li>Teamwork and project management abilities</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Future Aspects</h2>
+    <p>With the rise of private space exploration, UAVs, and advanced aviation technology, aerospace engineering offers exciting career growth. Emerging areas include electric aircraft, space tourism, and hypersonic travel.</p>
+  </section>
+
+  <section>
+    <h2>Top to Mid-Tier Companies That Recruit Aerospace Engineers</h2>
+    <ul>
+      <li><span class="highlight">Top-Tier:</span> ISRO, DRDO, HAL, Boeing, Airbus</li>
+      <li><span class="highlight">Mid-Tier:</span> L&T Aerospace, Honeywell, GE Aviation, Tata Advanced Systems</li>
+      <li><span class="highlight">Others:</span> Space startups, defense contractors, research labs</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Famous Aerospace Engineers</h2>
+    <ul>
+      <li><span class="highlight">Wernher von Braun</span> – Pioneer in rocket technology and space exploration</li>
+      <li><span class="highlight">Amelia Earhart</span> – Aviation pioneer and female aviator</li>
+      <li><span class="highlight">Kelly Johnson</span> – Designed the Lockheed U-2 and SR-71 Blackbird</li>
+      <li><span class="highlight">Satish Dhawan</span> – Indian aerospace engineer and ISRO chairman</li>
+    </ul>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

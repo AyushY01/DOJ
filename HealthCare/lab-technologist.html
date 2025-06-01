@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Laboratory Technologist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #ffffff;
+      color: #000000;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .toggle-container {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    h1 {
+      font-size: 28px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="toggle-container">
+    <label class="switch" aria-label="Toggle theme">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <h1>Medical Laboratory Technologist</h1>
+
+  <div class="section">
+    <div class="section-title">Description</div>
+    <div>Medical Laboratory Technologists perform complex tests on patient samples to help doctors diagnose and treat diseases. They use sophisticated instruments and techniques to analyze blood, tissue, and other bodily fluids.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Salary Range</div>
+    <div>$45,000 – $75,000 annually (varies by country and experience)</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Skills Required</div>
+    <div>Attention to detail, laboratory equipment handling, knowledge of biology and chemistry, critical thinking, data analysis, communication.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Future Aspects</div>
+    <div>High demand due to growing healthcare needs and aging populations. Opportunities in hospital labs, research institutions, public health, and private labs.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Top Recruiters</div>
+    <div>Mayo Clinic, Cleveland Clinic, Quest Diagnostics, Labcorp, government health departments, research centers.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Famous Professionals</div>
+    <div>While individual lab technologists are not widely publicized, many contribute significantly to breakthroughs in medical diagnostics and research.</div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

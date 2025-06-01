@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Field Jobs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Light and Dark Mode */
+        :root {
+            --bg-color: #f0f0f0; /* Lighter background for light mode */
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --card-text: #555;
+            --accent-color: #e63946; /* Original accent color */
+            --link-color: #f77f00;
+            --button-bg: #e63946;
+            --button-text: #fff;
+            --shadow-color: rgba(230, 57, 70, 0.1); /* Shadow for light mode */
+            --shadow-hover-color: rgba(230, 57, 70, 0.3); /* Hover shadow for light mode */
+        }
+        body.dark-mode {
+            --bg-color: #1a1a1a; /* Dark background for dark mode, matching web background */
+            --text-color: #eee;
+            --card-bg: #292929;
+            --card-text: #ccc;
+            --accent-color: #f94144; /* Slightly brighter accent for dark mode */
+            --link-color: #f9844a;
+            --button-bg: #f94144;
+            --button-text: #fff;
+            --shadow-color: rgba(249, 65, 68, 0.1); /* Shadow for dark mode */
+            --shadow-hover-color: rgba(249, 65, 68, 0.3); /* Hover shadow for dark mode */
+        }
+
+        /* Base body styles, incorporating the web background effect */
+        body {
+            font-family: 'Inter', sans-serif; /* Applied Inter font */
+            background: var(--bg-color);
+            /* Repeating linear gradients for the web pattern */
+            background-image:
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 15px),
+                repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 15px);
+            background-size: 15px 15px; /* Density of the web lines */
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 800; /* Bolder for impact */
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 2.5em; /* Larger title */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Subtle shadow for title */
+        }
+        .theme-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        input:checked + .slider {
+            background-color: var(--button-bg);
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .job-category {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            /* Using the new shadow variables */
+            box-shadow: 0 8px 20px var(--shadow-color);
+            transition: box-shadow 0.3s;
+            max-width: 800px; /* Constrain width for better readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .job-category:hover {
+            box-shadow: 0 12px 30px var(--shadow-hover-color);
+        }
+        .job-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+            font-family: 'Inter', sans-serif; /* Applied Inter font */
+        }
+        .job-description {
+            font-size: 15px;
+            color: var(--card-text);
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .know-more {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--link-color);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        .know-more:hover {
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .job-category {
+                padding: 15px 20px;
+            }
+            .job-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Design Field Jobs</h1>
+
+    <div class="theme-toggle">
+        <label class="switch">
+            <input type="checkbox" onclick="toggleTheme()" />
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">Graphic Designer</div>
+        <div class="job-description">Creates visual concepts to communicate ideas that inspire, inform, and captivate audiences through digital and print media.</div>
+        <a class="know-more" href="graphic-designer.html">Know more</a>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">UX/UI Designer</div>
+        <div class="job-description">Designs user-friendly interfaces and enhances user experience for websites, apps, and software products.</div>
+        <a class="know-more" href="ux-ui-designer.html">Know more</a>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">Motion Graphic Designer</div>
+        <div class="job-description">Creates animated graphics and visual effects for video, film, and digital media platforms.</div>
+        <a class="know-more" href="motion-graphic-designer.html">Know more</a>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">Illustrator</div>
+        <div class="job-description">Produces hand-drawn or digital illustrations for books, advertisements, packaging, and websites.</div>
+        <a class="know-more" href="illustrator.html">Know more</a>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">Art Director</div>
+        <div class="job-description">Leads creative teams to develop visual styles and images in magazines, newspapers, product packaging, and film productions.</div>
+        <a class="know-more" href="art-director.html">Know more</a>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">Interior Designer</div>
+        <div class="job-description">Plans and designs interior spaces to be functional, safe, and aesthetically pleasing.</div>
+        <a class="know-more" href="interior-designer.html">Know more</a>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">Fashion Designer</div>
+        <div class="job-description">Creates original clothing, accessories, and footwear designs, combining aesthetics with functionality.</div>
+        <a class="know-more" href="fashion-designer.html">Know more</a>
+    </div>
+
+    <div class="job-category">
+        <div class="job-title">Product Designer</div>
+        <div class="job-description">Develops concepts and designs for consumer products focusing on usability, functionality, and aesthetics.</div>
+        <a class="know-more" href="product-designer.html">Know more</a>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
